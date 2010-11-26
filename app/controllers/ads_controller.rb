@@ -1,7 +1,7 @@
 class AdsController < ApplicationController
   respond_to :html, :xml
   def index
-    @ads = Find.all
+    @ads = Ad.all
     respond_with @ads
   end
   
