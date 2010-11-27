@@ -1,3 +1,3 @@
 class Textbook < ActiveRecord::Base
-  belongs_to :ad
+  has_one :ad
 end

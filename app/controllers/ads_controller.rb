@@ -1,8 +1,7 @@
 class AdsController < ApplicationController
   respond_to :html, :xml
   def index
-    @ads = Ad.all(:include=> :textbook) #:include => :user
-    
+    @ads = Ad.all(:joins => :textbook) #:include => :user
     respond_with @ads
   end
   
@@ -14,6 +13,7 @@ class AdsController < ApplicationController
   
   def new
     @ad = Ad.new
+    @textbook = Textbook.find(params[:id])
     respond_with @product
   end
   

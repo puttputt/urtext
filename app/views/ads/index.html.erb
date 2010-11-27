@@ -3,17 +3,18 @@
 
 <% @ads.each do |ad| %>
   <div class="ad">
-    <h3><%= link_to ad.textbook.name, ad_path(ad) %>, <%= ad.textbook.edition %> ed</h3>
+	<h3><%= link_to ad.textbook.name, ad_path(ad) %>, <%= ad.textbook.edition %> ed</h3>
+    
 	<span class="typeprice">
-		<% if ad.type = 0 
-			put 'Buying for <span class="price">' + ad.price + '</span>'
-		else if ad.type = 1
-			put 'Selling for <span class="price"' + ad.price + '</span>'
+		<%= if ad.type = 0 
+			simple_format('Buying for <span class="price">' + ad.price.to_s + '</span>')
+		elsif ad.type = 1
+			simple_format('Selling for <span class="price"' + ad.price.to_s + '</span>')
 		end
-			
+
 		%>
 		</span>
-	<span class="user-info"><%= ad.user.name %></span>
+	<span class="user-info"></span>
 
 </div>
 <!--
@@ -26,4 +27,3 @@
 
 <br />
 
-<%= link_to 'New Ad', new_ad_path %>

@@ -24,8 +24,7 @@
     <%= f.label :description %><br />
     <%= f.text_area :description, :cols=> 40, :rows => 6 %>
   </div>
-  
-
+  	<%= f.hidden_field :textbook_id, :value=> @textbook.id %>
  
 
   <div class="actions">

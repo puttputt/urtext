@@ -1,0 +1,17 @@
+<h1>Textbooks</h1>
+
+<h2>Textbook not listed? <%= link_to 'Add one!', new_textbook_path %></h2>
+
+<% @textbooks.each do |t| %>
+  <div class="textbook">
+    <span="textbook"><%= t.name %>, <%= t.edition%> ed by <%= t.author%></h3>
+	<span class="decision"><a href="http://www.amazon.ca/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords=<%= t.name %>&x=0&y=0">Buy New</a> or <%= link_to "Create an ad", :controller=> 'ads', :action=> 'new', :id=>t.id %> </span>
+</span>
+</div>
+
+<% end %>
+
+
+<br />
+
+
