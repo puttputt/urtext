@@ -1,30 +1,28 @@
-<h1>Listing ads</h1>
+<h1>Textbook Ads</h1>
 
-<table>
-  <tr>
-    <th>Description</th>
-    <th>Type</th>
-    <th>User</th>
-    <th>Textbook</th>
-    <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @ads.each do |ad| %>
-  <tr>
-    <td><%= ad.description %></td>
-    <td><%= ad.type %></td>
-    <td><%= ad.user_id %></td>
-    <td><%= ad.textbook_id %></td>
-    <td><%= ad.price %></td>
+  <div class="ad">
+    <h3><%= link_to ad.textbook.name, ad_path(ad) %>, <%= ad.textbook.edition %> ed</h3>
+	<span class="typeprice">
+		<% if ad.type = 0 
+			put 'Buying for <span class="price">' + ad.price + '</span>'
+		else if ad.type = 1
+			put 'Selling for <span class="price"' + ad.price + '</span>'
+		end
+			
+		%>
+		</span>
+	<span class="user-info"><%= ad.user.name %></span>
+
+</div>
+<!--
     <td><%= link_to 'Show', ad %></td>
     <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
     <td><%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  </tr>-->
 <% end %>
-</table>
+
 
 <br />
 

@@ -1,7 +1,8 @@
 class AdsController < ApplicationController
   respond_to :html, :xml
   def index
-    @ads = Ad.all
+    @ads = Ad.all(:include=> :textbook) #:include => :user
+    
     respond_with @ads
   end
   

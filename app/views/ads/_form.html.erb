@@ -10,27 +10,24 @@
       </ul>
     </div>
   <% end %>
+<div class="field">
+    <%= f.label :type %><br />
+    Looking to Buy :<%= f.check_box :type, :checked_value => 0 %><br />
+	Looking to Sell <%= f.check_box :type, :checked_value => 0 %>
+  </div>
 
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :textbook_id %><br />
-    <%= f.text_field :textbook_id %>
-  </div>
-  <div class="field">
     <%= f.label :price %><br />
-    <%= f.text_field :price %>
+    $<%= f.number_field :price %>
   </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :cols=> 40, :rows => 6 %>
+  </div>
+  
+
+ 
+
   <div class="actions">
     <%= f.submit %>
   </div>
