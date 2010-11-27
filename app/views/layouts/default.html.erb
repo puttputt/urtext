@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>UrTextbook</title>
+    <% stylesheet_link_tag "test" %>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="navbar">
+            <ul>    
+                <li><a href="ads.html"<img src ="logo.png" alt="logo" /></a></li>
+                <li><a href="link1.html">Ads</a></li>
+                <li><a href="link2.html ">Search</a></li>
+                <li><a href="link3.html ">Login/Register</a></li>
+                <li>
+                    <form action="some ruby file.rb" method="POST">
+                        <label for="text">Search</label>
+                        <input type="text" name="" id="text">
+                        <input type="submit" name="submit" value="Go">
+                </form>
+            </ul>
+            <h1> Welcome to UR Textbook!</h1>
+        </div>
+    
+        <div class="main">
+            <%= yield %>
+        </div>
+    
+        <div id="bottombar">
+            <br />
+            <br />
+            <br />
+            <br />
+            <hr>
+            <ul>
+                <li>©2010 By Erotic Industries of Canada</li>
+                <li>Help</li>
+                <li>Privacy Policy</li>
+                <li>Terms of Service</li>
+                <li>Porn Links</li>
+            </ul>
+        </div>
+    </div>    
+</body>
+</html>
