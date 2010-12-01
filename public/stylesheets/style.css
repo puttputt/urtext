@@ -18,10 +18,9 @@ background-color: #336699;
 
 div#navbar ul {
 float:left;
-padding-top:10px;
+padding-top:0px;
 display:inline;
 color: #FFF;
-line-height: 0px;
 white-space: nowrap;
 }
 
@@ -31,15 +30,15 @@ display: inline;
 }
 
 div#navbar ul#otherside {
-line-height: 0px;
-padding-top:10px;
-display:inline;
-color: #FFF;
-padding-right:5px;
-line-height: 0px;
-white-space: nowrap;
 float:right;
+padding-top: 0px;
+display: inline;
+color: #FFF;
+padding-right: 5px;
+white-space: nowrap;
+
 }
+
 
 div#navbar li a {
 text-decoration: none;
@@ -47,18 +46,8 @@ padding-right:15px;
 color: #FFF;
 }
 
-div#navbar lia:link {
-color: #FFF;
-}
-
-div#navbar lia:visited {
+div#navbar li a:hover {
 color: #CCC;
-}
-
-div#navbar lia:hover {
-font-weight: bold;
-color: #FFF;
-background-color: #3366FF;
 }
 
 div#navbar img{
@@ -68,6 +57,33 @@ div#navbar img{
     border-style:none;
     display:inline;
     float:left;
+}
+
+div#navbar li#space{
+padding-right:10px;
+}
+
+
+/*main*/
+
+a:link{
+color:#336699;
+text-decoration: none;
+}
+
+a:visited{
+color:#336699;
+text-decoration: none;
+}
+
+a:hover{
+color:#999999;
+text-decoration: none;
+}
+
+.main {
+	margin-top: 25px;
+	margin-bottom: 50px;
 }
 
 /*Bottom Bar*/
@@ -85,10 +101,6 @@ div#bottombar li{
     list-style:none;
     text-decoration:none;
     display: inline;
-}
-.main {
-	margin-top: 25px;
-	margin-bottom: 50px;
 }
 
 .bottombar ul{
