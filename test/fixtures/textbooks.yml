@@ -4,8 +4,24 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+#one: {}
 # column: value
 #
-two: {}
+#two: {}
 #  column: value
+
+calc:
+    name: Calculus
+    edition: 6
+    author: James Stewart
+
+physics:
+    name: Physics
+    edition: 6
+    author: Giancoli
+    
+biology:
+    name: Biology
+    edition: 7
+    author: Neil A. Campbell
+        

@@ -5,8 +5,7 @@ class CreateAds < ActiveRecord::Migration
       t.integer :type1
       t.integer :user_id
       t.integer :textbook_id
-      t.decimal :price, :precision => "8", :scale => "2"
-
+      t.integer :price
       t.timestamps
     end
   end
