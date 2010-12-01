@@ -14,7 +14,7 @@
                 <li><a href="ads.html"><img src ="logo.png" alt="logo" /></a></li>
                 <li><%= link_to 'Ads', ads_path %></li>
                 <li><%= link_to 'Textbooks', textbooks_path %></li>
-                <li><a href="link3.html ">Login/Register</a></li>
+                <%= render 'layouts/login' %>
                 <li>
                     <form action="some ruby file.rb" method="POST">
                         <label for="text">Search</label>

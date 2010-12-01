@@ -30,4 +30,4 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 #   gem 'webrat'
 # end
 
-gem 'devise' #user auther
+gem 'authlogic', :git => "git://github.com/binarylogic/authlogic.git"

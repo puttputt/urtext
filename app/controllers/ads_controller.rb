@@ -1,6 +1,9 @@
 class AdsController < ApplicationController
   respond_to :html, :xml
+  before_filter :current_user, :current_user_session
+  before_filter :require_user, :only => [:new, :create, :update, :destroy]
   layout 'default'
+  
   def index
     @ads = Ad.all(:joins => :textbook) #:include => :user
     respond_with @ads

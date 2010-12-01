@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101126234406) do
+ActiveRecord::Schema.define(:version => 20101201014013) do
 
   create_table "ads", :force => true do |t|
     t.string   "description"
@@ -50,6 +50,21 @@ ActiveRecord::Schema.define(:version => 20101126234406) do
     t.string   "author"
     t.string   "amazon_url"
     t.integer  "edition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_sessions", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "login",             :null => false
+    t.string   "email",             :null => false
+    t.string   "crypted_password",  :null => false
+    t.string   "password_salt",     :null => false
+    t.string   "persistence_token", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
