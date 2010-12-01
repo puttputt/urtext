@@ -17,10 +17,11 @@ background-color: #336699;
 }
 
 div#navbar ul {
+float:left;
 padding-top:10px;
 display:inline;
 color: #FFF;
-line-height: 45px;
+line-height: 0px;
 white-space: nowrap;
 }
 
@@ -30,10 +31,12 @@ display: inline;
 }
 
 div#navbar ul#otherside {
+line-height: 0px;
 padding-top:10px;
 display:inline;
 color: #FFF;
-line-height: 45px;
+padding-right:5px;
+line-height: 0px;
 white-space: nowrap;
 float:right;
 }
