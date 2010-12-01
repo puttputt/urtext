@@ -11,15 +11,17 @@ class BookmarksController < ApplicationController
 		@bookmark.ad_id = params[:id]
 		@bookmark.save
 	end
-    respond_with @user
+    redirect_to ad_path(params[:id])
 	
   end
   
   def destroy
     @bookmark = Bookmark.find(params[:id])
-    @bookmark.destroy
-    flash[:notice] = "Successfuly deleted bookmark"
-    respond_with(@bookmark)
+    if(current_user.id = @bookmark.user_id)
+      @bookmark.destroy
+      flash[:notice] = "Successfuly deleted bookmark"
+    end
+    redirect_to users_path
     
   end
   

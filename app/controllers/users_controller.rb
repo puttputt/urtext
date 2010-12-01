@@ -1,7 +1,14 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
-    before_filter :require_user, :only => [:show, :edit, :update]
+    before_filter :require_user, :only => [:index, :show, :edit, :update]
     layout 'default'
+    def index
+      @user = User.find_by_id(current_user.id)
+      
+      @bookmarks = @user.bookmarks(:include => :ad, :include => :textbook)
+      @ads = @user.ads(:include=> :textbook)
+    end
+    
     def new
       @user = User.new
     end

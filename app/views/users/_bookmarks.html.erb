@@ -1,0 +1,3 @@
+
+	<%= link_to bmark.ad.textbook.name + ' @ ' + '$' + bmark.ad.price.to_s(), ad_path(bmark.ad_id) %> 
+	<%= button_to 'Delete', bookmark_path(bmark.id), :confirm => "Are you Sure?", :method => :delete %><br />

@@ -40,16 +40,24 @@ class AdsController < ApplicationController
   
   def update
     @ad = Ad.find(params[:id])
-    if @ad.update_attributes(params[:ad])
-      flash[:notice] = "Successfully updated ad"
+    if (current_user.id == @ad.user_id)
+      if @ad.update_attributes(params[:ad])
+        flash[:notice] = "Successfully updated ad"
+      end
+    else
+        flash[:notice] = "Invalid User"
     end
     respond_with(@ad)
   end
   
   def destroy
     @ad = Ad.find(params[:id])
-    @ad.destroy
-    flash[:notice] = "Successfuly deleted ad"
+    if(current_user.id == @ad.user_id)
+      @ad.destroy
+      flash[:notice] = "Successfuly deleted ad"
+    else
+      flash[:notice] = "Invalid user"
+    end
     respond_with(@ad)
     
   end

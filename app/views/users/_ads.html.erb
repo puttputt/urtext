@@ -1,0 +1,4 @@
+
+<%= link_to ad.textbook.name + ' @ ' + '$' + ad.price.to_s(), ad_path(ad.id) %> <br/>
+<%= link_to 'Edit', edit_ad_path(ad) %>
+<%= button_to 'Delete',ad_path(ad.id), :confirm => "Are you Sure?", :method => :delete %><br />
