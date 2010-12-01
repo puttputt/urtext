@@ -1,0 +1,11 @@
+<h1>Welcome to your Profile!</h1>
+
+<h2>Your Bookmarks</h2>
+	<%- for bookmark in @bookmarks -%>
+		<%= render :partial => "bookmarks", :locals => { :bmark => bookmark } %>
+	<%- end -%>
+<h2>Your Ads</h2>
+	<%- for ad in @ads -%>
+		<%= render :partial => "ads", :locals => {:ad => ad }%>
+	<%- end -%>
+	

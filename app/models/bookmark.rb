@@ -1,3 +1,4 @@
 class Bookmark < ActiveRecord::Base
-  has_one :ad
+  belongs_to :ad
+  belongs_to :user
 end

@@ -18,7 +18,8 @@
 
 <p>
   <b>User:</b>
-  <%= link_to @user.login, user_path(@user) %>
+  <strong><%= @user.login %></strong>
+  <%= link_to 'Message them!', :controller => 'messages', :action => 'new', :id => @user.login %>
 </p>
 
 <p>
@@ -30,8 +31,6 @@
   <%= @ad.price %>
 </p>
 
-<%= button_to "Bookmark", :controller=>'bookmarks', :action=>'new', :id=> @ad.id %>
+<%= link_to "Bookmark", :controller=>'bookmarks', :action=>'new', :id=> @ad.id %>
 
-
-<%= link_to 'Edit', edit_ad_path(@ad) %> |
 <%= link_to 'Back', ads_path %>
