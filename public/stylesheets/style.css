@@ -78,3 +78,11 @@ div#bottombar li{
     text-decoration:none;
     display: inline;
 }
+.main {
+	margin-top: 75px;
+	margin-bottom: 50px;
+}
+
+.bottombar ul{
+	margin: auto;
+}

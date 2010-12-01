@@ -1,5 +1,5 @@
 class TextbooksController < ApplicationController
-
+layout 'default'
 respond_to :html, :xml
   def index
     @textbooks = Textbook.all

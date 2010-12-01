@@ -4,16 +4,16 @@
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <title>UrTextbook</title>
-    <% stylesheet_link_tag "test" %>
+    <%= stylesheet_link_tag "style" %>
 </head>
 
 <body>
     <div class="wrapper">
         <div id="navbar">
             <ul>    
-                <li><a href="ads.html"<img src ="logo.png" alt="logo" /></a></li>
-                <li><a href="link1.html">Ads</a></li>
-                <li><a href="link2.html ">Search</a></li>
+                <li><a href="ads.html"><img src ="logo.png" alt="logo" /></a></li>
+                <li><%= link_to 'Ads', ads_path %></li>
+                <li><%= link_to 'Textbooks', textbooks_path %></li>
                 <li><a href="link3.html ">Login/Register</a></li>
                 <li>
                     <form action="some ruby file.rb" method="POST">
@@ -30,17 +30,13 @@
         </div>
     
         <div id="bottombar">
-            <br />
-            <br />
-            <br />
-            <br />
+
             <hr>
             <ul>
-                <li>©2010 By Erotic Industries of Canada</li>
+                <li>&copy; 2010 Ryan Fraser and Kyle Smyth</li>
                 <li>Help</li>
                 <li>Privacy Policy</li>
                 <li>Terms of Service</li>
-                <li>Porn Links</li>
             </ul>
         </div>
     </div>    

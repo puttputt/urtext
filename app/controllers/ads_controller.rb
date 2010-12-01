@@ -1,5 +1,6 @@
 class AdsController < ApplicationController
   respond_to :html, :xml
+  layout 'default'
   def index
     @ads = Ad.all(:joins => :textbook) #:include => :user
     respond_with @ads
