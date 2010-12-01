@@ -1,6 +1,7 @@
 <p>
-  <b>Login:</b>
-  <%=h @user.login %>
+  <b>Login Name:</b>
+  <%= @user.login %>
+  <%= link_to 'Message them!', :controller => 'messages', :action => 'new', :id => @user.login %>
 </p>
 
 

@@ -1,0 +1,21 @@
+<h1>Inbox</h1>
+
+<table>
+  <tr>
+    <th>From</th>
+    <th>Message</th>
+    <th>Action</th>
+  </tr>
+
+<% for message in @messages %>
+  <tr>
+    <td><%=h message.user.login %></td>
+    <td><%= link_to message.message, message %></td>
+    <td><%= button_to "Delete", message_path(message), :method=>:delete, :class=>:destroy,:confirm=>"Are you sure?" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New message', new_message_path %>
