@@ -28,12 +28,16 @@ class MessagesController < ApplicationController
     @message = Message.new(params[:message])
     @message.from_id = current_user.id
     @user = User.find_by_login(params[:username])
-    @message.user_id = @user.id
-    if @message.save
-      cookies[:last_message_id] = @message.id
-      flash[:notice] = "Successfuly sent message"
+    if @user
+      @message.user_id = @user.id
+      if @message.save
+        cookies[:last_message_id] = @message.id
+        flash[:notice] = "Successfuly sent message"
+      end
+    else
+      flash[:notice] = "User does not exist"
     end
-    respond_with(@message)
+    respond_with(@message, :location => users_url)
   end
   
   

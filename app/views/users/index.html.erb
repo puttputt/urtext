@@ -1,5 +1,5 @@
 <h1>Welcome to your Profile!</h1>
-
+<%= link_to "Messages", messages_path %>
 <h2>Your Bookmarks</h2>
 	<%- for bookmark in @bookmarks -%>
 		<%= render :partial => "bookmarks", :locals => { :bmark => bookmark } %>

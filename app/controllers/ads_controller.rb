@@ -53,12 +53,16 @@ class AdsController < ApplicationController
   def destroy
     @ad = Ad.find(params[:id])
     if(current_user.id == @ad.user_id)
+      @bookmarks = Bookmark.find_all_by_ad_id(@ad.id)
+      for b in @bookmarks
+        b.destroy
+      end
       @ad.destroy
       flash[:notice] = "Successfuly deleted ad"
     else
       flash[:notice] = "Invalid user"
     end
-    respond_with(@ad)
+    respond_with(@ad, :location => users_url)
     
   end
   
