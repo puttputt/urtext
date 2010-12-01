@@ -1,6 +1,6 @@
 <% session = UserSession.find
 	if(session) %>
-	<li>Welcome <%= current_user.login %> </li>
+	<li id="space">Welcome <%= current_user.login %> </li>
 	<li><%= link_to 'Profile', users_path %>
 	<li><%= link_to 'Logout', logout_path %></li>
 	<% elsif %>
