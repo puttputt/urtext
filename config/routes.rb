@@ -1,5 +1,5 @@
 Urtext::Application.routes.draw do
-  resources :ads, :textbooks, :messages, :users, :user_sessions
+  resources :ads, :textbooks, :messages, :users, :user_sessions, :bookmarks
   match "/login" => "user_sessions#new", :as => :login
   match "/logout" => "user_sessions#destroy", :as => :logout
 
