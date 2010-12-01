@@ -5,12 +5,13 @@ class AdsController < ApplicationController
   layout 'default'
   
   def index
-    @ads = Ad.all(:joins => :textbook) #:include => :user
+    @ads = Ad.all(:joins => :textbook, :include => :user)
     respond_with @ads
   end
   
   def show
-    @ad = Ad.find(params[:id])
+    @ad = Ad.find(params[:id], :joins => :textbook)
+    @user = User.find(@ad.user_id)
     respond_with @ad
     
   end
@@ -18,16 +19,18 @@ class AdsController < ApplicationController
   def new
     @ad = Ad.new
     @textbook = Textbook.find(params[:id])
-    respond_with @product
+    respond_with (@ad, @textbook)
   end
   
   def create
     @ad = Ad.new(params[:ad])
+    @ad.user_id = current_user.id
+    @textbook = Textbook.find(@ad.textbook_id)
     if @ad.save
       cookies[:last_ad_id] = @ad.id
       flash[:notice] = "Successfuly created ad"
     end
-    respond_with(@ad)
+    respond_with (@ad,:id => @ad.textbook.id)
   end
   
   def edit

@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(:version => 20101201031036) do
 
   create_table "ads", :force => true do |t|
     t.string   "description"
-    t.integer  "type"
+    t.integer  "type1"
     t.integer  "user_id"
     t.integer  "textbook_id"
     t.decimal  "price",       :precision => 8, :scale => 2

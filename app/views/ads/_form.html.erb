@@ -11,9 +11,9 @@
     </div>
   <% end %>
 <div class="field">
-    <%= f.label :type %><br />
-    Looking to Buy :<%= f.check_box :type, :checked_value => 0 %><br />
-	Looking to Sell <%= f.check_box :type, :checked_value => 0 %>
+    <%= f.label :type1 %><br />
+    Looking to Buy :<%= f.radio_button :type1, '0', :checked => true %><br />
+	Looking to Sell <%= f.radio_button :type1, '1' %>
   </div>
 
   <div class="field">
@@ -30,4 +30,4 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+<%- end -%>

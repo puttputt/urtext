@@ -1,5 +1,6 @@
 class TextbooksController < ApplicationController
 layout 'default'
+before_filter :require_user, :only => [:new, :create]
 respond_to :html, :xml
   def index
     @textbooks = Textbook.all
@@ -21,7 +22,7 @@ respond_to :html, :xml
     @textbook = Textbook.new(params[:textbook])
     if @textbook.save
       cookies[:last_textbook_id] = @textbook.id
-      flash[:notice] = "Successfuly created ad"
+      flash[:notice] = "Successfuly added textbook"
     end
     respond_with(@textbook)
   end
@@ -34,7 +35,7 @@ respond_to :html, :xml
   def update
     @textbook = Textbook.find(params[:id])
     if @textbook.update_attributes(params[:textbook])
-      flash[:notice] = "Successfully updated ad"
+      flash[:notice] = "Successfully updated textbook"
     end
     respond_with(@textbook)
   end
@@ -42,7 +43,7 @@ respond_to :html, :xml
   def destroy
     @textbook = Textbook.find(params[:id])
     @textbook.destroy
-    flash[:notice] = "Successfuly deleted ad"
+    flash[:notice] = "Successfuly deleted textbook"
     respond_with(@textbook)
     
   end
