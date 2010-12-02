@@ -106,3 +106,16 @@ div#bottombar li{
 .bottombar ul{
 	margin: auto;
 }
+.ad {
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	margin-bottom: 10px;
+	
+}
+.textbook {
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	margin-bottom: 10px;
+}

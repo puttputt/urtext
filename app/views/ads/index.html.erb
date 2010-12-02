@@ -8,13 +8,14 @@
 	<span class="typeprice">
 		<%= if ad.type1 = 0 
 				 	
-			simple_format('Buying for <span class="price">' + ad.price.to_s + '</span>')
+			simple_format('Buying for <span class="price">$' + ad.price.to_s + '</span>')
 		elsif ad.type1 = 1
-			simple_format('Selling for <span class="price"' + ad.price.to_s + '</span>')
+			simple_format('Selling for <span class="price">$' + ad.price.to_s + '</span>')
 		end
 
 		%>
 		</span>
+		
 	<span class="user-info"></span>
 
 </div>
